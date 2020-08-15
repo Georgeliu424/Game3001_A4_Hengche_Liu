@@ -24,9 +24,9 @@ public:
 	bool& IsObstacle() { return m_obstacle; }
 	bool IsHazard() { return m_hazard; }
 	Tile* Clone() { return new Tile(m_src, m_dst, m_pRend, m_pText, m_obstacle, m_hazard); }
-	PathNode* Node() { return m_node; }
+	path_node* Node() { return m_node; }
 public:
-	PathNode* m_node;
+	path_node* m_node;
 	Label *m_lCost, *m_lX, *m_lY;
 private:
 	bool m_obstacle, m_hazard;

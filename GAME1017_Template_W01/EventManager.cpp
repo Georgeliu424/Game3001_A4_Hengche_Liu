@@ -3,6 +3,10 @@
 #include <cstring>
 #include <iostream>
 
+
+#include "../SDL/SDL2/include/SDL.h"
+#include "../SDL/SDL2/include/SDL_keyboard.h"
+
 void EventManager::Init()
 {
 	s_keysCurr = SDL_GetKeyboardState(&s_numKeys);

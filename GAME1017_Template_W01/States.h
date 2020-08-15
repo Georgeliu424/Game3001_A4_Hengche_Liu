@@ -2,7 +2,6 @@
 #ifndef _STATES_H_
 #define _STATES_H_
 
-#include <SDL.h>
 
 class State // This is the abstract base class for all specific states.
 {

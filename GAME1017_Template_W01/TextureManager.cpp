@@ -2,6 +2,8 @@
 #include "Engine.h"
 #include <iostream>
 
+#include "../SDL/SDL2_image/include/SDL_image.h"
+
 void TextureManager::Init()
 {
 	if (IMG_Init(IMG_INIT_PNG | IMG_INIT_JPG) != 0)

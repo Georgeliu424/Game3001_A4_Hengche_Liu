@@ -1,6 +1,8 @@
 #include "FontManager.h"
 #include <iostream>
 
+#include "../SDL/SDL2/include/SDL_error.h"
+
 void FontManager::RegisterFont(const char * path, const std::string key, const int size)
 {
 	if (!TTF_WasInit() && TTF_Init() == 0)

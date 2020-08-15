@@ -2,7 +2,9 @@
 #ifndef _EVENTMANAGER_H_
 #define _EVENTMANAGER_H_
 
-#include <SDL.h>
+
+#include "../SDL/SDL2/include/SDL_rect.h"
+#include "../SDL/SDL2/include/SDL_scancode.h"
 
 class EventManager
 {

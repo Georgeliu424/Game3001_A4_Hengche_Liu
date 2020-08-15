@@ -2,9 +2,12 @@
 #ifndef _LABEL_H_
 #define _LABEL_H_
 
-#include <SDL.h>
-#include <SDL_ttf.h>
+
 #include <string>
+#include "FontManager.h"
+#include "../SDL/SDL2/include/SDL_pixels.h"
+#include "../SDL/SDL2/include/SDL_rect.h"
+#include "../SDL/SDL2/include/SDL_render.h"
 
 class Label
 {

@@ -2,8 +2,12 @@
 #ifndef _SPRITE_H_
 #define _SPRITE_H_
 
-#include "SDL.h"
 #include <iostream>
+
+
+#include "CollisionManager.h"
+#include "Label.h"
+#include "../SDL/SDL2/include/SDL_rect.h"
 
 class Sprite // Inline class.
 {
@@ -29,6 +33,10 @@ class AnimatedSprite : public Sprite// Also inline.
 public:
 	AnimatedSprite(SDL_Rect s, SDL_FRect d, SDL_Renderer* r, SDL_Texture* t, int sstart, int smin, int smax, int nf)
 		:Sprite(s, d, r, t), m_sprite(sstart), m_spriteMin(smin), m_spriteMax(smax), m_frameMax(nf) {}
+
+	AnimatedSprite(const SDL_Rect& sdl_rect, const SDL_FRect& sdl_f_rect, __resharper_unknown_type* sdl_renderer, SDL_Texture* sdl_texture, int sstart, int smin,
+	               int smax, int nf);
+
 	void Animate()
 	{
 		if (m_frame++ == m_frameMax) // Post-increment ensures m_frame starts at 0.

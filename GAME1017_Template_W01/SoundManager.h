@@ -3,9 +3,10 @@
 #define _SOUNDMANAGER_H_
 
 #include <iostream>
-#include <string>
 #include <map> 
-#include <SDL_mixer.h>
+#include <string>
+
+#include "../SDL/SDL2_mixer/include/SDL_mixer.h"
 
 enum SoundType
 {

@@ -13,6 +13,8 @@
 #include <array>
 #include <map>
 
+#include "../SDL/SDL2/include/SDL_render.h"
+
 #define ROWS 24
 #define COLS 32
 #define WIDTH 1024

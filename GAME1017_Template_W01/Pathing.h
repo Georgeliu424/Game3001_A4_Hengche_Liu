@@ -1,16 +1,17 @@
 #pragma once
 #ifndef _PATHING_H_
 #define _PATHING_H_
-#include <SDL.h>
 #include <vector>
+
+#include "../SDL/SDL2/include/SDL_rect.h"
 
 class PathConnection; // Forward declaration required.
 
-class PathNode : public SDL_Point // Because why not?
+class path_node : public SDL_Point // Because why not?
 {
 public:
-	PathNode(int x, int y);
-	~PathNode();
+	path_node(int x, int y);
+	~path_node();
 	void Update();
 	void AddConnection(PathConnection* c);
 	std::vector<PathConnection*>& GetConnections();
@@ -25,21 +26,21 @@ private:
 class PathConnection
 {
 public:
-	PathConnection(PathNode* f, PathNode* t, double cost = 1.0);
+	PathConnection(path_node* f, path_node* t, double cost = 1.0);
 	~PathConnection() {}
 	double GetCost() { return m_cost; }
 	void SetCost(double cost) { m_cost = cost; }
-	PathNode* GetFromNode() { return m_pFromNode; }
-	PathNode* GetToNode() { return m_pToNode; }
+	path_node* GetFromNode() { return m_pFromNode; }
+	path_node* GetToNode() { return m_pToNode; }
 private:
 	double m_cost;
-	PathNode *m_pFromNode, *m_pToNode;
+	path_node *m_pFromNode, *m_pToNode;
 };
 
 struct NodeRecord
 { // Everything public by default.
-	NodeRecord(PathNode* n = nullptr) :m_node(n), m_connection(nullptr), m_fromRecord(nullptr), m_costSoFar(0.0), m_totalCost(0.0){	}
-	PathNode* m_node;
+	NodeRecord(path_node* n = nullptr) :m_node(n), m_connection(nullptr), m_fromRecord(nullptr), m_costSoFar(0.0), m_totalCost(0.0){	}
+	path_node* m_node;
 	PathConnection* m_connection;
 	NodeRecord* m_fromRecord;
 	double m_costSoFar;

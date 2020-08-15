@@ -2,30 +2,42 @@
 
 #include "CollisionManager.h"
 
-PathNode::PathNode(int x, int y, int w, int h) : m_bLOS(false)
+PathNode::PathNode(int x, int y, int w, int h):m_bLOS(false)
 {
 	m_rDst.x = x;
 	m_rDst.y = y;
 	m_rDst.w = w;
 	m_rDst.h = h;
 }
+
 PathNode::~PathNode()
-= default;
-
-void PathNode::draw()
 {
 }
 
-void PathNode::update()
-{
-
-}
-
-void PathNode::clean()
+void PathNode::Render()
 {
 }
 
-void PathNode::setLOS(const bool LOS)
+void PathNode::Update()
+{
+}
+
+glm::vec2 PathNode::GetPos()
+{
+	return glm::vec2(m_rDst.x, m_rDst.y);
+}
+
+float PathNode::GetWidth()
+{
+	return m_rDst.w;
+}
+
+float PathNode::GetHeight()
+{
+	return m_rDst.h;
+}
+
+void PathNode::setLOS(bool LOS)
 {
 	m_bLOS = LOS;
 }

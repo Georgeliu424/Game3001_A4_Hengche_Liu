@@ -3,7 +3,6 @@
 #define _BUTTON_H_
 
 #include "Sprite.h"
-#include <SDL.h>
 
 // Button will be an example of the command design pattern.
 class Button : public Sprite

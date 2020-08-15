@@ -3,8 +3,10 @@
 #define __PATH_NODE__
 
 #include "Sprite.h"
+#include "../SDL/SDL2/include/SDL_rect.h"
+#include "../SDL/SDL2/include/glm/vec2.hpp"
 
-class PathNode
+class PathNode: 
 {
 public:
 	PathNode(int x, int y, int w, int h);
@@ -16,16 +18,13 @@ public:
 	float GetWidth();
 	float GetHeight();
 	void setLOS(bool LOS);
-	bool getLOS() const;;
-
-
-	void setLOS(bool LOS);
 	bool getLOS() const;
+
 
 private:
 	SDL_Rect m_rDst;
 	bool m_bLOS;
 
-
+};
 
 #endif

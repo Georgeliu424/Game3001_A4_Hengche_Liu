@@ -3,6 +3,8 @@
 #define _PLAYER_H_
 
 #include "Sprite.h"
+#include "../SDL/SDL2/include/SDL_rect.h"
+#include "../SDL/SDL2/include/SDL_render.h"
 
 class Player : public AnimatedSprite
 {

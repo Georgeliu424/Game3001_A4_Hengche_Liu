@@ -2,6 +2,8 @@
 #include <algorithm>
 #include <iostream>
 
+#include "../SDL/SDL2/include/SDL_audio.h"
+
 void SoundManager::Init()
 {
 	if (Mix_OpenAudio(22050, AUDIO_S16SYS, 2, 2048) == 0)

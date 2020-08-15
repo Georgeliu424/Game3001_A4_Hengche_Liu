@@ -7,14 +7,14 @@
 class PathManager
 {
 public:
-	static void GetShortestPath(PathNode* start, PathNode* goal);
+	static void GetShortestPath(path_node* start, path_node* goal);
 	static NodeRecord* GetSmallestNode();
 	static std::vector<NodeRecord*>& OpenList();
 	static std::vector<NodeRecord*>& ClosedList();
-	static bool ContainsNode(std::vector<NodeRecord*>& list, PathNode* n);
-	static NodeRecord* GetNodeRecord(std::vector<NodeRecord*>& list, PathNode* n);
-	static double HEuclid(const PathNode* start, const PathNode* goal);
-	static double HManhat(const PathNode* start, const PathNode* goal);
+	static bool ContainsNode(std::vector<NodeRecord*>& list, path_node* n);
+	static NodeRecord* GetNodeRecord(std::vector<NodeRecord*>& list, path_node* n);
+	static double HEuclid(const path_node* start, const path_node* goal);
+	static double HManhat(const path_node* start, const path_node* goal);
 	static void DrawPath();
 private:
 	PathManager() {}

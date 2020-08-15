@@ -3,7 +3,7 @@
 #include "MathManager.h"
 #include <iostream>
 
-void PathManager::GetShortestPath(PathNode* start, PathNode* goal)
+void PathManager::GetShortestPath(path_node* start, path_node* goal)
 {
 	// std::cout << "Starting pathing..." << std::endl;
 	s_path.clear(); // Clear the old saved path so we can save a new one.
@@ -26,7 +26,7 @@ void PathManager::GetShortestPath(PathNode* start, PathNode* goal)
 		for (unsigned i = 0; i < connections.size(); i++)
 		{
 			// std::cout << "Doing connection " << i << std::endl;
-			PathNode* endNode = connections[i]->GetToNode();
+			path_node* endNode = connections[i]->GetToNode();
 			NodeRecord* endNodeRecord;
 			double endNodeCost = currentRecord->m_costSoFar + connections[i]->GetCost();
 
@@ -119,7 +119,7 @@ std::vector<NodeRecord*>& PathManager::ClosedList()
 	return s_closed;
 }
 
-bool PathManager::ContainsNode(std::vector<NodeRecord*>& list, PathNode* n)
+bool PathManager::ContainsNode(std::vector<NodeRecord*>& list, path_node* n)
 {
 	for (unsigned i = 0; i < list.size(); i++)
 		if (list[i]->m_node == n)
@@ -127,7 +127,7 @@ bool PathManager::ContainsNode(std::vector<NodeRecord*>& list, PathNode* n)
 	return false;
 }
 
-NodeRecord* PathManager::GetNodeRecord(std::vector<NodeRecord*>& list, PathNode * n)
+NodeRecord* PathManager::GetNodeRecord(std::vector<NodeRecord*>& list, path_node * n)
 {
 	for (unsigned i = 0; i < list.size(); i++)
 		if (list[i]->m_node == n)
@@ -135,12 +135,12 @@ NodeRecord* PathManager::GetNodeRecord(std::vector<NodeRecord*>& list, PathNode 
 	return nullptr;
 }
 
-double PathManager::HEuclid(const PathNode* start, const PathNode* goal)
+double PathManager::HEuclid(const path_node* start, const path_node* goal)
 {
 	return MAMA::Distance(start->x, goal->x, start->y, goal->y);
 }
 
-double PathManager::HManhat(const PathNode * start, const PathNode * goal)
+double PathManager::HManhat(const path_node * start, const path_node * goal)
 {
 	return (std::abs(start->x - goal->x) + std::abs(start->y - goal->y));
 }

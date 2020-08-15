@@ -3,9 +3,7 @@
 #define _COLLISIONMANAGER_H_
 
 #include <iostream>
-#include <SDL.h>
 #include "MathManager.h"
-#include "glm/glm.hpp"
 #include "Sprite.h"
 #include "Tile.h"
 #include "PathNode.h"
@@ -20,7 +18,7 @@ public:
 	static bool lineLineCheck(const glm::vec2 line1_start, const glm::vec2 line1_end, const glm::vec2 line2_start, const glm::vec2 line2_end);
 	static bool lineRectCheck(const glm::vec2 line1_start, const glm::vec2 line1_end, const glm::vec2 rec_start, const float rect_width, const float rect_height);
 	static bool LOSCheck(Sprite* from, Sprite* to, SDL_FRect* rect);
-	static bool LOSCheckN(PathNode* from, Sprite* to, SDL_FRect* rect);
+	static bool LOSCheckN(path_node* from, Sprite* to, SDL_FRect* rect);
 	static bool PlayerCollision(const SDL_Rect player, const int dX, const int dY);
 private:
 	CollisionManager() {}

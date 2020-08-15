@@ -2,13 +2,13 @@
 #include "EventManager.h"
 #include "MathManager.h"
 
-PathNode::PathNode(int x, int y)
+path_node::path_node(int x, int y)
 {
 	this->x = x;
 	this->y = y;
 }
 
-PathNode::~PathNode()
+path_node::~path_node()
 {
 	for (unsigned i = 0; i < m_connections.size(); i++)
 	{
@@ -19,7 +19,7 @@ PathNode::~PathNode()
 	m_connections.shrink_to_fit();
 }
 
-void PathNode::Update()
+void path_node::Update()
 {
 	SDL_Rect temp = { x-16, y-16, 32, 32 }; // Made bounding box double the size of the node for easier dragging.
 	if (SDL_PointInRect(&EVMA::GetMousePos(), &temp))
@@ -32,14 +32,14 @@ void PathNode::Update()
 	}
 }
 
-void PathNode::AddConnection(PathConnection* c)
+void path_node::AddConnection(PathConnection* c)
 {
 	m_connections.push_back(c);
 }
 
-std::vector<PathConnection*>& PathNode::GetConnections()
+std::vector<PathConnection*>& path_node::GetConnections()
 {
 	return m_connections;
 }
 
-PathConnection::PathConnection(PathNode* f, PathNode* t, double cost) : m_cost(cost), m_pFromNode(f), m_pToNode(t) {}
+PathConnection::PathConnection(path_node* f, path_node* t, double cost) : m_cost(cost), m_pFromNode(f), m_pToNode(t) {}

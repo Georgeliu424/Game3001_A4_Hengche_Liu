@@ -4,13 +4,15 @@
 
 #include <map>
 #include <string>
-#include <SDL.h>
-#include <SDL_image.h>
+
+
+#include "../SDL/SDL2/include/SDL_render.h"
 
 class TextureManager
 {
 public: // Public methods.
 	static void Init();
+	static SDL_Texture* IMG_LoadTexture(SDL_Renderer* get_renderer, const char* path);
 	static void RegisterTexture(const char* path, const std::string key);
 	static SDL_Texture* GetTexture(const std::string key);
 	static void Quit();
