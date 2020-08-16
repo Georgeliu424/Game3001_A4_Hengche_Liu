@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <cmath>
 #include "../SDL/SDL2/include/SDL_rect.h"
+#include "glm.hpp"
 
 class MathManager
 {
@@ -23,7 +24,8 @@ public: // Public methods.
 	static double LerpD(double first, double second, double perc);
 	static double LerpRad(double a, double b, double factor);
 	static SDL_Point HalfwayPoint(const SDL_Point& from, const SDL_Point& to);
-
+	static glm::vec2 normalize(glm::vec2 vec);
+	
 private: // Private properties.
 	MathManager() {}
 };

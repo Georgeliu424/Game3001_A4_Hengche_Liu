@@ -95,3 +95,17 @@ SDL_Point MathManager::HalfwayPoint(const SDL_Point& from, const SDL_Point& to)
 {
 	return {(int)(((double)from.x + (double)to.x)/2.0), (int)(((double)from.y + (double)to.y)/2.0)};
 }
+
+glm::vec2 MathManager::normalize(glm::vec2 vec)
+{
+	glm::vec2 dest;
+	auto x = vec.x;
+	auto y = vec.y;
+	auto length = (x * x) + (y * y);
+	if (length > 0) {
+		length = 1.0 / sqrt(length);
+		dest.x = vec.x * length;
+		dest.y = vec.y * length;
+	}
+	return dest;
+}
